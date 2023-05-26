@@ -13,7 +13,15 @@
             <div class="navigation__brand">Logo</div>
             <div class="navigation__second-column">
                 <div class="navigation__account">Account</div>
-                <nav class="navigation__main-menu">Menu</nav>
+                <nav class="navigation__main-menu">
+                    <?php
+                    wp_nav_menu(
+                            array(
+                                    'theme_location' => 'online_jewelry_store_main_menu'
+                            )
+                    );
+                    ?>
+                </nav>
             </div>
         </section>
     </header>

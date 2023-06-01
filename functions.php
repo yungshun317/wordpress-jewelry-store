@@ -42,3 +42,16 @@ add_action( 'after_setup_theme', 'online_jewelry_store_config', 0 );
 if ( class_exists( 'WooCommerce' ) ) {
     require get_template_directory() . '/inc/wc-modifications.php';
 }
+
+add_action( 'widgets_init', 'online_jewelry_store_sidebars' );
+function online_jewelry_store_sidebars() {
+    register_sidebar( array(
+        'name' => 'Online Jewelry Store Main Sidebar',
+        'id' => 'online-jewelry-store-sidebar-1',
+        'description' => 'Drag and drop your widgets here',
+        'before_widget' => '<div id="%1$s" class="widgets %2$s widget-wrapper">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="widget-title">',
+        'after_title' => '</h4>'
+    ) );
+}

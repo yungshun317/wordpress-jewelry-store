@@ -41,3 +41,23 @@ Tags: e-commerce, custom-menu, custom-logo, featured-images, footer-widgets, the
     padding: 0.3rem 1rem;
     margin-right: 0.3rem;
 }
+
+/* Cart */
+.cart .cart-icon{
+    background: url('img/cart.svg');
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.cart .items{
+    background: #CA2424;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+}

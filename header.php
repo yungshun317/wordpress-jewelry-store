@@ -12,7 +12,12 @@
         <section class="navigation__top-bar">
             <div class="navigation__brand">Logo</div>
             <div class="navigation__second-column">
-                <div class="navigation__account">Account</div>
+                <div class="navigation__account">
+                    <div class="cart text-right">
+                        <a href="<?php echo wc_get_cart_url(); ?>"><span class="cart-icon"></span></a>
+                        <span class="items"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                    </div>
+                </div>
                 <nav class="navigation__main-menu">
                     <?php
                     wp_nav_menu(

@@ -13,6 +13,10 @@ function online_jewelry_store_config() {
         )
     );
 
+    add_theme_support( 'widgets' );
+    add_theme_support( 'widgets-block-editor' );
+    add_theme_support( 'customize-selective-refresh-widgets' );
+
     add_theme_support( 'woocommerce', array(
         'thumbnail_image_width' => 255,
         'single_image_width' => 255,
@@ -35,4 +39,6 @@ function online_jewelry_store_config() {
 }
 add_action( 'after_setup_theme', 'online_jewelry_store_config', 0 );
 
-require get_template_directory() . '/inc/wc-modifications.php';
+if ( class_exists( 'WooCommerce' ) ) {
+    require get_template_directory() . '/inc/wc-modifications.php';
+}

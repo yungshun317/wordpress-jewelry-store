@@ -8,7 +8,7 @@
 </head>
 <body <?php body_class(); ?>>
     <header class="navigation">
-        <section class="navigation__search">Search</section>
+        <section class="navigation__search"><?php get_search_form(); ?></section>
         <section class="navigation__top-bar">
             <div class="navigation__brand">Logo</div>
             <div class="navigation__second-column">

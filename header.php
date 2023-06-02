@@ -13,6 +13,13 @@
             <div class="navigation__brand">Logo</div>
             <div class="navigation__second-column">
                 <div class="navigation__account">
+                    <!--<<div class="navigation_expand">
+                        <ul>
+                            li>
+                                <a href="#" ?> class="navigation__link"></a>
+                            </li>
+                        </ul>
+                    </div>-->
                     <div class="cart text-right">
                         <a href="<?php echo wc_get_cart_url(); ?>"><span class="cart-icon"></span></a>
                         <span class="items"><?php echo WC()->cart->get_cart_contents_count(); ?></span>

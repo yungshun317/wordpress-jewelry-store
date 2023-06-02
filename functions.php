@@ -43,6 +43,19 @@ if ( class_exists( 'WooCommerce' ) ) {
     require get_template_directory() . '/inc/wc-modifications.php';
 }
 
+add_filter( 'woocommerce_add_to_cart_fragments', 'online_jewelry_store_woocommerce_header_add_to_cart_fragment' );
+function online_jewelry_store_woocommerce_header_add_to_cart_fragment( $fragments ) {
+    global $woocommerce;
+
+    ob_start();
+
+    ?>
+    <span class="items"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+    <?php
+    $fragments['span.items'] = ob_get_clean();
+    return $fragments;
+}
+
 add_action( 'widgets_init', 'online_jewelry_store_sidebars' );
 function online_jewelry_store_sidebars() {
     register_sidebar( array(

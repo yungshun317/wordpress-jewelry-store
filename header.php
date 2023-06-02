@@ -10,8 +10,19 @@
     <header class="navigation">
         <section class="navigation__search"><?php get_search_form(); ?></section>
         <section class="navigation__top-bar">
-            <div class="navigation__brand">Logo</div>
+            <div class="navigation__brand">
+                <a href="<?php echo home_url( '/' ) ?>">
+                    <?php
+                    if ( has_custom_logo() ):
+                        the_custom_logo();
+                    else: ?>
+                        <p class="site-title"><?php bloginfo( 'title' ); ?></p>
+                        <span><?php bloginfo( 'description' ); ?></span>
+                    <?php endif; ?>
+                </a>
+            </div>
             <div class="navigation__second-column">
+                <?php if( class_exists( 'WooCommerce' ) ): ?>
                 <div class="navigation__account">
                     <div class="navigation_expand">
                         <ul>
@@ -34,6 +45,7 @@
                         <span class="items"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
                     </div>
                 </div>
+                <?php endif; ?>
                 <nav class="navigation__main-menu">
                     <?php
                     wp_nav_menu(

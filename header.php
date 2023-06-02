@@ -13,13 +13,22 @@
             <div class="navigation__brand">Logo</div>
             <div class="navigation__second-column">
                 <div class="navigation__account">
-                    <!--<<div class="navigation_expand">
+                    <div class="navigation_expand">
                         <ul>
-                            li>
-                                <a href="#" ?> class="navigation__link"></a>
+                            <?php if ( is_user_logged_in() ): ?>
+                            <li>
+                                <a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>" class="navigation__link">My Account</a>
                             </li>
+                            <li>
+                                <a href="<?php echo esc_url( wp_logout_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ) ); ?>" class="navigation__link">Logout</a>
+                            </li>
+                            <?php else: ?>
+                            <li>
+                                <a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>" class="navigation__link">Login / Register</a>
+                            </li>
+                            <?php endif; ?>
                         </ul>
-                    </div>-->
+                    </div>
                     <div class="cart text-right">
                         <a href="<?php echo wc_get_cart_url(); ?>"><span class="cart-icon"></span></a>
                         <span class="items"><?php echo WC()->cart->get_cart_contents_count(); ?></span>

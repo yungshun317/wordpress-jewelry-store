@@ -16,7 +16,7 @@ function online_jewelry_store_customizer( $wp_customize ) {
             'sanitize_callback' => 'sanitize_text_field'
         )
     );
-    
+
     $wp_customize->add_control(
         'set_copyright', array(
             'label' => 'Copyright',

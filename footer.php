@@ -1,6 +1,9 @@
         <footer>
             <section class="footer__widgets">Footer Widgets</section>
-            <section class="footer__copyright">
+            <section>
+                <div class="footer__copyright">
+                    <p><?php echo get_theme_mod( 'set_copyright', 'Copyright X - All Rights Reserved' ); ?></p>
+                </div>>
                 <nav class="footer__menu">
                     <?php
                     wp_nav_menu(

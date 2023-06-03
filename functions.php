@@ -1,5 +1,7 @@
 <?php
 
+require_once get_template_directory() . '/inc/customizer.php';
+
 function online_jewelry_store_scripts() {
     wp_enqueue_style( 'online-jewelry-store-style', get_stylesheet_uri(), array(), filemtime( get_template_directory() . '/style.css' ), 'all' );
 }
